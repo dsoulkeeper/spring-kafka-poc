@@ -3,10 +3,10 @@ package com.upgrad.streams.kafkastreamspoc.producer;
 import org.springframework.cloud.stream.annotation.Output;
 import org.springframework.messaging.MessageChannel;
 
-public interface PageViewProducerBinding {
+public interface ComponentViewProducerBinding {
 
-    String PAGE_VIEWS_OUT = "pvout";
+    String COMPONENT_VIEWS_OUT = "cvout";
 
-    @Output(PAGE_VIEWS_OUT)
-    MessageChannel pageViewsOut();
+    @Output(COMPONENT_VIEWS_OUT)
+    MessageChannel componentViewsOut();
 }

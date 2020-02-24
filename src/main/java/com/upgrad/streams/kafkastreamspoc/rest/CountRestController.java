@@ -1,6 +1,6 @@
 package com.upgrad.streams.kafkastreamspoc.rest;
 
-import com.upgrad.streams.kafkastreamspoc.station.PageViewStationBinding;
+import com.upgrad.streams.kafkastreamspoc.station.ComponentViewStationBinding;
 import lombok.AllArgsConstructor;
 import org.apache.kafka.streams.KeyValue;
 import org.apache.kafka.streams.state.KeyValueIterator;
@@ -20,9 +20,9 @@ public class CountRestController {
     private final InteractiveQueryService queryService;
 
     @GetMapping("/counts")
-    public Map<String, Long> getPageViewsCount() {
+    public Map<String, Long> getComponentsViewsCount() {
         Map<String, Long> result = new HashMap<>();
-        ReadOnlyKeyValueStore<byte[], Long> store = queryService.getQueryableStore(PageViewStationBinding.PAGE_COUNT_MATERIALIZED_VIEW, QueryableStoreTypes.keyValueStore());
+        ReadOnlyKeyValueStore<byte[], Long> store = queryService.getQueryableStore(ComponentViewStationBinding.COMPONENT_COUNT_MATERIALIZED_VIEW, QueryableStoreTypes.keyValueStore());
         KeyValueIterator<byte[], Long> all = store.all();
 
         while (all.hasNext()) {

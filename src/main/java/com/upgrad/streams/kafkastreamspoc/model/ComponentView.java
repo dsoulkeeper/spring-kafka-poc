@@ -9,8 +9,8 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class PageView {
+public class ComponentView {
     private Long userId;
-    private String page;
+    private String component;
     private int duration;
 }
