@@ -37,7 +37,7 @@ public class PageViewProducerService implements ApplicationRunner {
 
     @Override
     public void run(ApplicationArguments args) throws Exception {
-        Executors.newScheduledThreadPool(1).scheduleAtFixedRate(this::sendMessage, 1, 1, TimeUnit.SECONDS);
+        Executors.newScheduledThreadPool(1).scheduleAtFixedRate(this::sendMessage, 1, 300, TimeUnit.MILLISECONDS);
     }
 
     @SneakyThrows
